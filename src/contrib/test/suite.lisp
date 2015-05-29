@@ -489,8 +489,6 @@ you would call like this: `(run-server-tests :foo)'."
       (is (get-header headers :content-type) "text/plain; charset=utf-8")
       (is body "/foo///bar/baz"))))
 
-(cl-test-more::remove-exit-hook)
-
 (doc:start)
 
 @doc:NAME "
