@@ -1,7 +1,7 @@
 #|
   This file is a part of Clack package.
   URL: http://github.com/fukamachi/clack
-  Copyright (c) 2011 Eitarow Fukamachi <e.arrows@gmail.com>
+  Copyright (c) 2011 Eitaro Fukamachi <e.arrows@gmail.com>
 
   Clack is freely distributable under the LLGPL License.
 |#
@@ -9,7 +9,7 @@
 #|
   Clack.Test - Testing Clack Applications.
 
-  Author: Eitarow Fukamachi (e.arrows@gmail.com)
+  Author: Eitaro Fukamachi (e.arrows@gmail.com)
 |#
 
 (in-package :cl-user)
@@ -18,15 +18,16 @@
 (in-package :clack-test-asd)
 
 (defsystem clack-test
-  :version "12.03"
-  :author "Eitarow Fukamachi"
+  :version "0.1.2"
+  :author "Eitaro Fukamachi"
   :license "LLGPL"
   :depends-on (:clack
-               :cl-syntax
-               :cl-syntax-annot
-               :cl-test-more
+               :prove
+               :bordeaux-threads
+               :usocket
+               :drakma
                :flexi-streams
-               :drakma)
-  :components ((:file "src/contrib/test")
-               (:file "src/contrib/test/suite" :depends-on ("src/contrib/test")))
+               :http-body)
+  :components ((:file "src/test")
+               (:file "src/test/suite" :depends-on ("src/test")))
   :description "Testing Clack Applications.")

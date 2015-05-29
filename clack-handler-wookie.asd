@@ -7,24 +7,28 @@
 |#
 
 #|
-  Clack.Handler.Hunchentoot - Clack handler for Hunchentoot.
+  Clack.Handler.Wookie - Clack handler for Wookie.
 
   Author: Eitaro Fukamachi (e.arrows@gmail.com)
 |#
 
 (in-package :cl-user)
-(defpackage :clack-handler-hunchentoot-asd
+(defpackage :clack-handler-wookie-asd
   (:use :cl :asdf))
-(in-package :clack-handler-hunchentoot-asd)
+(in-package :clack-handler-wookie-asd)
 
-(defsystem clack-handler-hunchentoot
-  :version "0.4.0"
+(defsystem clack-handler-wookie
+  :version "0.2.0"
   :author "Eitaro Fukamachi"
   :license "LLGPL"
-  :depends-on (:hunchentoot
+  :depends-on (:wookie
+               :cl-async
+               :fast-http
+               :quri
                :flexi-streams
-               :bordeaux-threads
+               :babel
+               :fast-io
                :split-sequence
                :alexandria)
-  :components ((:file "src/handler/hunchentoot"))
-  :description "Clack handler for Hunchentoot.")
+  :components ((:file "src/handler/wookie"))
+  :description "Clack handler for Wookie.")

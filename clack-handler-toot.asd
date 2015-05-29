@@ -7,24 +7,26 @@
 |#
 
 #|
-  Clack.Handler.Hunchentoot - Clack handler for Hunchentoot.
+  Clack.Handler.Toot - Clack handler for Toot.
 
   Author: Eitaro Fukamachi (e.arrows@gmail.com)
+  Author: κeen
 |#
 
 (in-package :cl-user)
-(defpackage :clack-handler-hunchentoot-asd
+(defpackage :clack-handler-toot-asd
   (:use :cl :asdf))
-(in-package :clack-handler-hunchentoot-asd)
+(in-package :clack-handler-toot-asd)
 
-(defsystem clack-handler-hunchentoot
-  :version "0.4.0"
+(defsystem clack-handler-toot
+  :version "0.2.0"
   :author "Eitaro Fukamachi"
   :license "LLGPL"
-  :depends-on (:hunchentoot
+  :depends-on (:toot
                :flexi-streams
                :bordeaux-threads
+               :cl-ppcre
                :split-sequence
                :alexandria)
-  :components ((:file "src/handler/hunchentoot"))
-  :description "Clack handler for Hunchentoot.")
+  :components ((:file "src/handler/toot"))
+  :description "Clack handler for Toot.")
